@@ -20,4 +20,9 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-
+### Add authentication data
+in file src/db/db.json
+```
+"login": "your_login",
+"password": "your_password",
+```
