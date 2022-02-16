@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 
 from src.db.projects_data import ProjectsData
 from src.screens.pages_screen import PagesScreen
+from src.utils.url import UrlUtils
 
 
 class ProjectsScreen:
@@ -28,6 +29,8 @@ class ProjectsScreen:
                 break
             if event == 'Add':
                 ProjectsData.add(values[1])
+                print(UrlUtils.name(values[1]))
+                PagesScreen.run(UrlUtils.name(values[1]))
             if projects.get(event):
                 PagesScreen.run(event)
 
